@@ -1,0 +1,85 @@
+title: malloc(inf * sizeof thought);
+description: >
+  Произошло динамическое выделение памяти на неопределенное количество мыслей, пул памяти заполняется...
+  PLs: C, TS/JS, Python
+
+telegram_channel:
+  id: mall0c
+  logo: 'assets/logo.jpg'
+  num_of_posts: 0
+  num_of_subscribers: 0
+  created_at: 2024-01-13
+
+author:
+  name: mall0c
+  # email: your-email@domain.com
+
+social:
+  name: mall0c
+  links:
+    - https://t.me/mall0c
+
+collections:
+  memblocks:
+    order: reverse
+
+pagination:
+  enabled: true
+  collection: memblocks
+  per_page: 15
+  title: ""
+  permalink: '/page/:num/'
+  sort_reverse: true
+
+remote_theme: jekyll/minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-remote-theme
+  - jekyll-paginate-v2
+  - jemoji
+
+# seo_paginator_message: "Page :num of :max_page"
+
+# Minima specific settings, which are only available from Minima 3.0 onward.
+minima:
+  # Minima skin selection.
+  # Available skins are:
+  # classic	           Default, light color scheme.
+  # dark	             Dark variant of the classic skin.
+  # auto	             Adaptive skin based on the default classic and dark skins.
+  # solarized-light	   Light variant of solarized color scheme.
+  # solarized-dark	   Dark variant of solarized color scheme.
+  # solarized	         Adaptive skin for solarized color scheme skins.
+  skin: auto
+  
+  # Minima date format.
+  # The default value is "%b %d, %Y" (e.g. Nov 14, 2023) 
+  # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
+  date_format: "%B %d, %Y at %H:%M %Z"
+
+  # Generate social links in footer.
+  social_links:
+  #  - { platform: devto,          user_url: "https://dev.to/jekyll" }
+  #  - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
+  #  - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
+  #  - { platform: flickr,         user_url: "https://www.flickr.com/photos/jekyll" }
+  #  - { platform: github,         user_url: "https://github.com/jekyll/minima" }
+  #  - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ" }
+  #  - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
+  #  - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
+  #  - { platform: linkedin,       user_url: "https://www.linkedin.com/in/jekyll" }
+  #  - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
+  #  - { platform: pinterest,      user_url: "https://www.pinterest.com/jekyll" }
+  #  - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/1234567/jekyll" }
+   - { platform: telegram,       user_url: "https://t.me/mall0c" }
+  #  - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
+  #  - { platform: x,              user_url: "https://x.com/jekyllrb" }
+  #  - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
+
+# timezone: America/New_York
+lang: en-US
+
+
