@@ -35,6 +35,9 @@ pagination:
 
 remote_theme: jekyll/minima
 
+url: https://memoryall0c.github.io
+base: ''
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
