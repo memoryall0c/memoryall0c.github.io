@@ -38,6 +38,12 @@ remote_theme: jekyll/minima
 url: https://memoryall0c.github.io
 base: ''
 
+feed:
+  path: ""
+  collections:
+    memblocks:
+      path: "/feed.xml"
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
