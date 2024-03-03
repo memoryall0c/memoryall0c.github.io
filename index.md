@@ -6,7 +6,7 @@ pagination:
 
 <div class="channel-info">
   <div class="logo">
-    <img src="{{ site.telegram_channel.logo }}" alt="Logo">
+    <img src="{{ site.telegram_channel.logo | relative_url }}" alt="Logo">
   </div>
   <div class="stats">
     Telegram Channel: <a href="https://t.me/{{ site.telegram_channel.id }}" target="_blank">@{{ site.telegram_channel.id }}</a><br>
