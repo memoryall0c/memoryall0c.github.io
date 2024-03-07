@@ -93,4 +93,5 @@ minima:
 timezone: UTC
 lang: en-US
 
-
+sass:
+  style: compressed
