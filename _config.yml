@@ -7,7 +7,7 @@ telegram_channel:
   id: mall0c
   logo: 'assets/logo.jpg'
   num_of_posts: 20
-  num_of_subscribers: 4
+  num_of_subscribers: 3
   created_at: 2024-01-13
 
 author:
