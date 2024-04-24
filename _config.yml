@@ -20,7 +20,8 @@ social:
     - https://t.me/mall0c
 
 google_analytics: G-45JQH16K2R
-yandex_site_verification: 34471d23ea8d5ea7
+webmaster_verifications:
+  yandex: 34471d23ea8d5ea7
 
 collections:
   memblocks:
