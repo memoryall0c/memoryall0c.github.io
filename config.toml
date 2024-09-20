@@ -11,9 +11,9 @@ highlight_theme = "charcoal"
 [extra]
 author = "mall0c"
 after_dark_menu = [{ url = "$BASE_URL", name = "Home" }]
-google_analytics = ""
+google_analytics = "G-45JQH16K2R"
 
 [extra.telegram_channel]
-created_at = ""
+created_at = "2024-01-13"
 id = "mall0c"
 logo = "logo.jpg"
