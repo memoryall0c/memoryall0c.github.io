@@ -1,0 +1,19 @@
+base_url = "https://getzola.github.io/after-dark/"
+compile_sass = true
+# title = "after-dark theme"
+# description = "A robust, elegant dark theme"
+generate_feeds = true
+
+[markdown]
+highlight_code = true
+highlight_theme = "charcoal"
+
+[extra]
+author = "mall0c"
+after_dark_menu = [{ url = "$BASE_URL", name = "Home" }]
+google_analytics = ""
+
+[extra.telegram_channel]
+created_at = ""
+id = "mall0c"
+logo = "logo.jpg"
