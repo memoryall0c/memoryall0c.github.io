@@ -57,6 +57,17 @@ span.spoiler {
 .hack .divider:after {
   content: "====================================================================================================";
   color: #ccc;
+  word-wrap: normal;
+}
+
+.hack h1.title {
+  display: block;
+  width: 100%;
+  word-wrap: normal;
+
+  &::after {
+    width: 100%;
+  }
 }
 
 div[itemprop="articleBody"] {
