@@ -72,5 +72,7 @@ span.spoiler {
 }
 
 div[itemprop="articleBody"] {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.01rem;
+  border-bottom: 0.5px dashed;
 }
