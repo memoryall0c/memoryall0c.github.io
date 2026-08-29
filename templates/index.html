@@ -1,8 +1,7 @@
-{%- import "macros.html" as macros %}
 {%- set section = get_section(path="posts/_index.md") %}
-{%- set memberCount = macros::getNumOfSubscribers() %}
-{%- set title = macros::getTitle() %}
-{%- set description = macros::getDescription() %}
+{%- set memberCount %}{{<getNumOfSubscribers config />}}{% endset %}
+{%- set title %}{{<getTitle config />}}{% endset %}
+{%- set description %}{{<getDescription config />}}{% endset %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -64,7 +63,7 @@
                   </div>
                   <div class="stats">
                     Telegram Channel: <a href="https://t.me/{{ config.extra.telegram_channel.id }}" target="_blank">@{{ config.extra.telegram_channel.id }}</a><br>
-                    Description: {{ description | linebreaksbr | safe }}<br>
+                    Description: {{ description | replace(from="\n", to="<br>") | safe }}<br>
                     Subscribers: {{ memberCount }}<br>
                     Posts: {{ section.pages | length }}<br>
                     Created: {{ config.extra.telegram_channel.created_at | date(format="%B %d, %Y") }}
@@ -72,7 +71,7 @@
                 </div>
                 <hr class="divider">
                 {% for page in paginator.pages %}
-                    {{ macros::page_in_list(page=page) }}
+                    {{<page_in_list page config />}}
                 {% endfor %}
 
                 <nav>

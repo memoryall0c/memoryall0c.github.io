@@ -1,4 +1,4 @@
-{% macro meta(page) %}
+{% component meta(page) %}
     <svg class="icon i-edit" viewBox="0 0 32 32"
          width="16" height="16" fill="none" stroke="currentcolor"
          stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -6,9 +6,9 @@
     </svg>
 
     {% if page.date %}Published: {{ page.date | date(format="%F %H:%M %Z", timezone="UTC") }}{% endif %}
-{% endmacro meta %}
+{% endcomponent meta %}
 
-{% macro page_in_list(page) %}
+{% component page_in_list(page, config) %}
     <article itemscope itemtype="http://schema.org/CreativeWork">
         <header>
             <h2 itemprop="name">
@@ -18,7 +18,7 @@
                     {{ page.title }}
                 {% endif %}
             </h2>
-            <time class="muted">{{ self::meta(page=page) }}</time>
+            <time class="muted">{{<meta page />}}</time>
         </header>
         {%- if page.extra.images -%}
             <p class="center-images">
@@ -31,9 +31,9 @@
             {{ page.content | safe }}
         </div>
     </article>
-{% endmacro page_in_list %}
+{% endcomponent page_in_list %}
 
-{%- macro getNumOfSubscribers() %}
+{%- component getNumOfSubscribers(config) %}
 {%- set token = get_env(name="TELEGRAM_BOT_TOKEN", default="") %}
 {%- if token %}
 {%- set url = "https://api.telegram.org/bot" ~ token ~ "/getChatMemberCount?chat_id=@" ~ config.extra.telegram_channel.id %}
@@ -42,9 +42,9 @@
 {{- response.result -}}
 {%- endif %}
 {%- endif %}
-{%- endmacro getNumOfSubscribers %}
+{%- endcomponent getNumOfSubscribers %}
 
-{%- macro getChannelInfo(prop) %}
+{%- component getChannelInfo(config, prop) %}
 {%- set token = get_env(name="TELEGRAM_BOT_TOKEN", default="") %}
 {%- if token %}
 {%- set url = "https://api.telegram.org/bot" ~ token ~ "/getChat?chat_id=@" ~ config.extra.telegram_channel.id %}
@@ -53,22 +53,22 @@
 {{- response.result[prop] -}}
 {%- endif %}
 {%- endif %}
-{%- endmacro getChannelInfo %}
+{%- endcomponent getChannelInfo %}
 
-{%- macro getTitle() %}
-{%- set title = self::getChannelInfo(prop="title") %}
+{%- component getTitle(config) %}
+{%- set title %}{{<getChannelInfo config prop="title" />}}{% endset %}
 {%- if title %}
 {{- title -}}
 {%- elif config.title %}
 {{- config.title -}}
 {%- endif %}
-{%- endmacro getTitle %}
+{%- endcomponent getTitle %}
 
-{%- macro getDescription() %}
-{%- set description = self::getChannelInfo(prop="description") %}
+{%- component getDescription(config) %}
+{%- set description %}{{<getChannelInfo config prop="description" />}}{% endset %}
 {%- if description %}
 {{- description -}}
 {%- elif config.description %}
 {{- config.description -}}
 {%- endif %}
-{%- endmacro getDescription %}
+{%- endcomponent getDescription %}
